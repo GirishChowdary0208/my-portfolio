@@ -1,0 +1,53 @@
+/* Cursor and global styles */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global cursor and interaction styles */
+* {
+  cursor: default !important;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Ensure specific interactive elements have appropriate cursors */
+a, 
+button, 
+input, 
+textarea, 
+select,
+[type="button"], 
+[type="submit"], 
+[type="reset"],
+[role="button"],
+[data-clickable="true"] {
+  cursor: pointer !important;
+}
+
+/* Disable cursor hiding */
+body, html {
+  cursor: default !important;
+  overflow-x: hidden;
+}
+
+/* Additional cursor reset for edge cases */
+::selection {
+  background: rgba(0, 123, 255, 0.2);
+  cursor: default !important;
+}
+
+/* Prevent text selection on non-input elements */
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Ensure cursor visibility on hover states */
+*:hover {
+  cursor: inherit !important;
+}
